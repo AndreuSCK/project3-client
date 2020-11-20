@@ -81,10 +81,10 @@ class AuthProvider extends React.Component {
       // el objeto pasado en la prop value estará disponible para todos los componentes <Consumer>
       <div>Loading</div>
     ) : (
-      <Provider value={{ isLoggedin, user, login, logout, signup }}>
-        {this.props.children}
-      </Provider>
-    ); /*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */
+        <Provider value={{ isLoggedin, user, login, logout, signup }}>
+          {this.props.children}
+        </Provider>
+      ); /*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */
   }
 }
 
