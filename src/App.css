@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24x;
+  color:#3a3a3a;
+  
+}
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
-.App {
-  padding: 20px;;
-}
+/* NAVBAR */
 
 nav.navbar { 
   display: flex;
@@ -28,4 +34,93 @@ button.navbar-button {
 #home-btn {
   color: white;
   text-decoration: none;
+}
+
+/* GENERAL COMPONENTS */
+.whiteBoardTitle {
+  font-family: 'Spartan', sans-serif;
+  margin-top: 50px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+/* LOGIN-REGISTER PAGE */
+
+#idSignupAndLogin {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#idSignupAndLogin .signupLoginLinks {
+  margin-top: 30px;
+  display:flex;
+}
+
+#idSignupAndLogin button {
+  border: none;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  color:#3a3a3a;
+  cursor: pointer;
+}
+
+#idSignupAndLogin .activeButton {
+  background-color: rgb(215, 215, 215);
+}
+
+#idSignupAndLogin form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* HOME */
+
+#homeID {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#homeID h2 {
+  margin-top: 30px;
+  font-size: 30px;
+}
+#homeID button {
+  margin-top: 25px;
+    border: none;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  color:#3a3a3a;
+
+  cursor: pointer;
+  border-radius: 10px;
+  
+}
+
+#homeID button:hover{
+  background-color: rgb(215, 215, 215);
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+#canvasAvailableID {
+  display: flex;
+  align-items: center;
+}
+#canvasAvailableID #addCanvasButton {
+  border-radius: 50%;
+  width: 50px;
+  text-align: center;
+}
+#canvasAvailableID .canvas-button {
+  height: 100px;
+  width: 150px;
+  margin-right: 25px;
 }

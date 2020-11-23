@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
       return (
         <Consumer>
           {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}
-          {({ login, signup, user, logout, isLoggedin }) => {
+          {({ login, signup, user, logout, isLoggedin, newCanvas }) => {
             return (
               <WrappedComponent
                 login={login}
@@ -18,6 +18,7 @@ const withAuth = (WrappedComponent) => {
                 user={user}
                 logout={logout}
                 isLoggedin={isLoggedin}
+                newCanvas={newCanvas}
                 {...this.props}
               />
             );
@@ -43,6 +44,19 @@ class AuthProvider extends React.Component {
         this.setState({ isLoggedin: false, user: null, isLoading: false })
       );
   }
+
+  newCanvas = (data) => {
+    const { author, name, gridSize, canvasData } = data
+    console.log(data)
+    auth
+      .newCanvas({ author, name, gridSize, canvasData })
+      .then((data) => this.setState({}))
+      .catch((err) => console.log(err));
+  };
+
+
+
+
 
   signup = (user) => {
     const { username, password } = user;
@@ -74,14 +88,14 @@ class AuthProvider extends React.Component {
   render() {
     // destructuramos isLoading, isLoggedin y user de this.state y login, logout y signup de this
     const { isLoading, isLoggedin, user } = this.state;
-    const { login, logout, signup } = this;
+    const { login, logout, signup, newCanvas } = this;
 
     return isLoading ? (
       // si está loading, devuelve un <div> y sino devuelve un componente <Provider> con un objeto con los valores: { isLoggedin, user, login, logout, signup}
       // el objeto pasado en la prop value estará disponible para todos los componentes <Consumer>
       <div>Loading</div>
     ) : (
-        <Provider value={{ isLoggedin, user, login, logout, signup }}>
+        <Provider value={{ isLoggedin, user, login, logout, signup, newCanvas }}>
           {this.props.children}
         </Provider>
       ); /*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */

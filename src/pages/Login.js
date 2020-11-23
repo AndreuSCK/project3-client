@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
+import { Link } from "react-router-dom";
+
 
 class Login extends Component {
   state = { username: "", password: "" };
@@ -20,8 +22,21 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
-        <h1>Login</h1>
+      <div id="idSignupAndLogin">
+        <h1 className="whiteBoardTitle">
+          whiteboard app
+        </h1>
+
+        <div className="signupLoginLinks">
+          <Link to='/login'>
+            <button className='activeButton'>Login</button>
+          </Link>
+          <br />
+          <Link to='/signup'>
+            <button>Sign Up</button>
+          </Link>
+        </div>
+
 
         <form onSubmit={this.handleFormSubmit}>
           <label>Username:</label>

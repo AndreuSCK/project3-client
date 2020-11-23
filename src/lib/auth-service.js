@@ -8,6 +8,13 @@ class Auth {
     });
   }
 
+  newCanvas({ author, gridSize, canvasData, name }) {
+    return this.auth
+      .post("/auth/new", { author, gridSize, canvasData, name })
+      .then(({ data }) => data);
+  }
+
+
   signup({ username, password }) {
     return this.auth
       .post("/auth/signup", { username, password })

@@ -1,0 +1,27 @@
+#canvasID {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#canvasID h1 {
+    margin-bottom: 8px;
+
+}
+#canvasID hr {
+    margin-bottom: 100px;
+    display:block;
+    width: 100%;
+    height:2px;
+    background-color: gray;
+}
+#mainCanvasID {
+
+}
+
+#mainCanvasID div {
+    width: 200px; 
+    height: 200px;
+    background-color: rgb(180, 180, 180)
+}
+

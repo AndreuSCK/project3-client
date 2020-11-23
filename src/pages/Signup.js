@@ -20,8 +20,22 @@ class Signup extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div>
-        <h1>Sign Up</h1>
+      <div id="idSignupAndLogin">
+        <h1 className="whiteBoardTitle">
+          whiteboard app
+        </h1>
+
+
+        <div className="signupLoginLinks">
+          <Link to='/login'>
+            <button className=''>Login</button>
+          </Link>
+          <br />
+          <Link to='/signup'>
+            <button className='activeButton'>Sign Up</button>
+          </Link>
+        </div>
+
 
         <form onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
