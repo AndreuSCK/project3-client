@@ -9,7 +9,7 @@ class Home extends Component {
     return (
       <main id="homeID">
         <h1 className="whiteBoardTitle">
-          whiteboard app
+          TRIGMA
         </h1>
         <h2>
           Your canvas

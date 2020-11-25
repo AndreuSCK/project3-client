@@ -6,6 +6,11 @@ class Auth {
       baseURL: "http://localhost:4000",
       withCredentials: true,
     });
+
+    this.service = axios.create({
+      baseURL: "http://localhost:4000/api",
+      // withCredentials: true
+    });
   }
 
   newCanvas({ author, gridSize, canvasData, name }) {
@@ -30,6 +35,17 @@ class Auth {
   logout() {
     return this.auth.post("/auth/logout", {}).then(({ data }) => data);
   }
+
+  // handleUpload = async (theFile) => {
+  //   console.log("file in service: ", theFile);
+
+  //   try {
+  //     const res = await this.service.post("/upload", theFile);
+  //     return res.data;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   me() {
     return this.auth.get("/auth/me").then(({ data }) => data);

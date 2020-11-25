@@ -22,7 +22,7 @@ class Signup extends Component {
     return (
       <div id="idSignupAndLogin">
         <h1 className="whiteBoardTitle">
-          whiteboard app
+          TRIGMA
         </h1>
 
 
@@ -38,7 +38,7 @@ class Signup extends Component {
 
 
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
+          <label>Username</label>
           <input
             type='text'
             name='username'
@@ -46,7 +46,7 @@ class Signup extends Component {
             onChange={this.handleChange}
           />
 
-          <label>Password:</label>
+          <label>Password</label>
           <input
             type='password'
             name='password'
@@ -54,7 +54,7 @@ class Signup extends Component {
             onChange={this.handleChange}
           />
 
-          <input type='submit' value='Signup' />
+          <input className="submit" type='submit' value='SIGNUP'/>
         </form>
 
         <p>Already have account?</p>
