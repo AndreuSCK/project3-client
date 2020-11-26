@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent) => {
       return (
         <Consumer>
           {/* El componente <Consumer> provee un callback que recibe el "value" con el objeto Providers */}
-          {({ login, signup, user, logout, isLoggedin, newCanvas }) => {
+          {({ login, signup, user, logout, isLoggedin, newCanvas, message, }) => {
             return (
               <WrappedComponent
                 login={login}
@@ -19,6 +19,7 @@ const withAuth = (WrappedComponent) => {
                 logout={logout}
                 isLoggedin={isLoggedin}
                 newCanvas={newCanvas}
+                message={message}
                 {...this.props}
               />
             );
@@ -31,7 +32,7 @@ const withAuth = (WrappedComponent) => {
 
 // Provider
 class AuthProvider extends React.Component {
-  state = { isLoggedin: false, user: null, isLoading: true };
+  state = { isLoggedin: false, user: null, isLoading: true , message: ''};
 
   componentDidMount() {
     // luego de que se monte el componente, llama a auth.me() que nos devuelve el usuario y setea los valores para loguearlo
@@ -54,7 +55,9 @@ class AuthProvider extends React.Component {
       .catch((err) => console.log(err));
   };
 
-
+  // userUpdate = (user) => {
+  //   console.log("patatas"+user)
+  // }
 
 
 
@@ -64,9 +67,12 @@ class AuthProvider extends React.Component {
     auth
       .signup({ username, password })
       .then((user) => this.setState({ isLoggedin: true, user }))
-      .catch(({ response }) =>
-        this.setState({ message: response.data.statusMessage })
-      );
+      .catch(({ response }) =>{
+        this.setState({ message: 'hola' })
+
+        
+      })
+      ;
   };
 
   login = (user) => {
@@ -75,7 +81,9 @@ class AuthProvider extends React.Component {
     auth
       .login({ username, password })
       .then((user) => this.setState({ isLoggedin: true, user }))
-      .catch((err) => console.log(err));
+      .catch(({response}) =>{
+        console.log(response.data)
+        this.setState({message: response.data})})
   };
 
   logout = () => {
@@ -85,17 +93,21 @@ class AuthProvider extends React.Component {
       .catch((err) => console.log(err));
   };
 
+ 
+
+  
+
   render() {
     // destructuramos isLoading, isLoggedin y user de this.state y login, logout y signup de this
-    const { isLoading, isLoggedin, user } = this.state;
-    const { login, logout, signup, newCanvas } = this;
+    const { isLoading, isLoggedin, user, message} = this.state;
+    const { login, logout, signup, newCanvas} = this;
 
     return isLoading ? (
       // si está loading, devuelve un <div> y sino devuelve un componente <Provider> con un objeto con los valores: { isLoggedin, user, login, logout, signup}
       // el objeto pasado en la prop value estará disponible para todos los componentes <Consumer>
       <div>Loading</div>
     ) : (
-        <Provider value={{ isLoggedin, user, login, logout, signup, newCanvas }}>
+        <Provider value={{ isLoggedin, user, message, login, logout, signup, newCanvas}}>
           {this.props.children}
         </Provider>
       ); /*<Provider> "value={}" datos que estarán disponibles para todos los componentes <Consumer> */

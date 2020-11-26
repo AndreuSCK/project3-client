@@ -20,11 +20,11 @@ class Login extends Component {
 
   render() {
     const { username, password } = this.state;
-
+    console.log(this.props.message)
     return (
       <div id="idSignupAndLogin">
         <h1 className="whiteBoardTitle">
-          whiteboard app
+          TRIGMA
         </h1>
 
         <div className="signupLoginLinks">
@@ -39,7 +39,7 @@ class Login extends Component {
 
 
         <form onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
+          <label>Username</label>
           <input
             type='text'
             name='username'
@@ -47,15 +47,15 @@ class Login extends Component {
             onChange={this.handleChange}
           />
 
-          <label>Password:</label>
+          <label>Password</label>
           <input
             type='password'
             name='password'
             value={password}
             onChange={this.handleChange}
           />
-
-          <input type='submit' value='Login' />
+          <input className="submit" type='submit' value='LOG IN'/>
+          {this.props.message}
         </form>
       </div>
     );

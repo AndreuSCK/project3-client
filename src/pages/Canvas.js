@@ -25,22 +25,6 @@ export default class Canvas extends Component {
                         dragElastic={0.1}
                     // onDrag={(event, info) => console.log(info.point)}
                     />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         )
