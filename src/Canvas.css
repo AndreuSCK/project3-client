@@ -1,27 +1,121 @@
+.canvasTitle {
+    font-family: 'Spartan', sans-serif;
+    font-size: 35px;
+    letter-spacing: -1px;
+    text-align: left;
+    padding-left: 30px;
+    text-transform: lowercase;
+    color: #ec6ba7;
+    background-color: #fff;
+    line-height: 30px;
+    border-bottom: 1px solid #c1c1c1;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
 #canvasID {
   display:flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  width: 100%;
   text-align: center;
+  height:100px;
 }
 #canvasID h1 {
+    margin-top: 0px;
     margin-bottom: 8px;
 
 }
-#canvasID hr {
-    margin-bottom: 100px;
-    display:block;
-    width: 100%;
-    height:2px;
-    background-color: gray;
-}
-#mainCanvasID {
 
+#canvasTableID {
+    position: relative;
+    
 }
 
-#mainCanvasID div {
-    width: 200px; 
-    height: 200px;
-    background-color: rgb(180, 180, 180)
+.componentDiv1 {
+    padding: 20px;
+    /* width: 200px; 
+    height: 200px; */
+    background-color: rgb(221, 221, 221);
+    position: absolute;
+    border-radius: 4px;
+    font-size:12px;
+    font-weight: normal;
+    box-shadow: 1px 1px 1px 1px rgba(68, 68, 68, 0.356) ;
 }
 
+.canvasOptions {
+    font-size: 20px;
+    position: absolute;
+    right: 105%;
+    top: 0px;
+    background-color: rgb(221, 221, 221);
+    height: auto;
+    width: 120px;
+    border-radius: 5px;
+    
+}
+.canvasOptions p {
+    cursor:pointer;
+}
+.canvasOptions p:hover {
+    background-color: rgba(88, 88, 88, 0.2);
+}
+.canvasOptions textarea {
+    height: 100px;
+
+    width: 80%;
+    border: none;
+    text-align:center;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+.editable {
+    opacity: 50%;
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    /* background-color: rgb(151, 187, 151); */
+    height: 30px;
+    width: 30px;
+    color:rgb(38, 38, 38);
+    background-color: #ccc;
+    border-radius: 50px;
+    line-height: 17px; 
+    cursor:pointer;
+}
+.editable:hover {
+    background-color: rgb(165, 165, 165);
+
+}
+.editable span {
+    font-size: 20px;
+
+
+}
+.fontSizeEditable {
+    font-size: 30px;
+    display:flex;
+    justify-content: space-around;
+}
+.fontSizeEditable > * {
+    width: 50%;
+    cursor:pointer;
+    
+    
+}
+.fontSizeEditable > *:hover {
+    background-color: rgba(88, 88, 88, 0.2);
+}
+
+.textoAlineadoToggle {
+    display:flex;
+    justify-content:space-around;
+    font-size: 20px;
+}
+.textoAlineadoToggle > * {
+    cursor:pointer;
+    width: 33%;
+}
+.textoAlineadoToggle > *:hover {
+    background-color: rgba(88, 88, 88, 0.2);
+}
