@@ -10,50 +10,18 @@ export default class Canvas extends Component {
     // }
 
     render() {
+        // console.log(this.props.match.params.id)
 
-        const handleDrag = (e, info) => {
-            console.log(info.point.x)
-        }
+        // const handleDrag = (e, info) => {
+        //     console.log(info.point.x)
+        // }
 
 
 
         // const [value, setValue] = useState(false)
         // const constraintsRef = useRef(null)
         return (
-            < div id="canvasID" >
-                <h1 className="canvasTitle">
-                    Proyecto Patatas
-                </h1>
-                <div id="canvasTableID" >
-                    {/* <div id="mainCanvasID" ref={constraintsRef}> */}
-
-
-                    {/* <motion.div animate={{ scale: 0.5 }} /> */}
-
-
-
-                    {/* 
-                    <MotionDiv info={{ drag: true }} functions={{ handleDrag }} />
-                    <MotionDiv info={{ drag: true }} functions={{ handleDrag }} />
-
-                    <MotionDiv info={{ drag: true }} functions={{ handleDrag }} />
-                    <MotionDiv info={{ drag: true }} functions={{ handleDrag }} />
- */}
-
-                    <LayoutCanvas />
-                    {/* <div className="componentDiv1"></div> */}
-
-
-
-
-
-
-
-
-
-
-                </div>
-            </div >
+            <LayoutCanvas localId={this.props.match.params.id} />
         )
     }
 }

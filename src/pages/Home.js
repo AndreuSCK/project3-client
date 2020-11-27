@@ -9,32 +9,33 @@ class Home extends Component {
     return (
       <main id="homeID">
         <h1 className="whiteBoardTitle">
-          TRIGMA
+          vuoto
         </h1>
         <h2>
-          Your canvas
-          {/* {this.props.user.username} */}
+          Welcome back, {this.props.user.username}
         </h2>
         <div id="canvasAvailableID">
-          <Link to="/canvas">
-            <button className="canvas-button">Lista de la compra</button>
-          </Link>
-          <Link to="/canvas">
+          <Link to="/canvas/1">
             <button className="canvas-button">Proyecto patatas</button>
           </Link>
+          <Link to="/canvas/2">
+            <button className="canvas-button">Proyect pollo</button>
+          </Link>
 
-          <Link to="/new">
+          <Link to="/canvas/new">
             <button id="addCanvasButton" >+</button>
           </Link>
         </div>
-        <Link to="/gallery">
+        {/* <Link to="/gallery">
           <button >Canvas Gallery</button>
-        </Link>
-        <Link to="/profile">
-          <button >Profile</button>
-        </Link>
+        </Link> */}
+        <div style={{ display: "flex" }}>
+          <Link to="/profile">
+            <button className="profileLogout">Profile</button>
+          </Link>
 
-        <button onClick={logout} >Logout</button>
+          <button className="profileLogout" onClick={logout} >Logout</button>
+        </div>
 
       </main>
     )

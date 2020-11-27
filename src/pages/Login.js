@@ -24,7 +24,7 @@ class Login extends Component {
     return (
       <div id="idSignupAndLogin">
         <h1 className="whiteBoardTitle">
-          TRIGMA
+          vuoto
         </h1>
 
         <div className="signupLoginLinks">
@@ -54,7 +54,7 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <input className="submit" type='submit' value='LOG IN'/>
+          <input className="submit" type='submit' value='LOG IN' />
           {this.props.message}
         </form>
       </div>

@@ -22,7 +22,7 @@ class Signup extends Component {
     return (
       <div id="idSignupAndLogin">
         <h1 className="whiteBoardTitle">
-          TRIGMA
+          vuoto
         </h1>
 
 
@@ -54,7 +54,7 @@ class Signup extends Component {
             onChange={this.handleChange}
           />
 
-          <input className="submit" type='submit' value='SIGNUP'/>
+          <input className="submit" type='submit' value='SIGNUP' />
         </form>
 
         <p>Already have account?</p>

@@ -38,9 +38,22 @@ class App extends Component {
 
 
             <PrivateRoute exact path='/new' component={NewCanvas} />
+
+
             <PrivateRoute exact path='/canvas' component={Canvas} />
-            <PrivateRoute exact path='/image' component={addImage}/>
-            <PrivateRoute exact path='/profile' component={Profile}/>
+
+            <PrivateRoute exact path='/canvas/:id' component={Canvas} />
+
+
+
+
+
+
+            <PrivateRoute exact path='/image' component={addImage} />
+            <PrivateRoute exact path='/profile' component={Profile} />
+
+
+
           </Switch>
         </div>
       </AuthProvider>

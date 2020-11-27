@@ -8,9 +8,17 @@
     color: #ec6ba7;
     background-color: #fff;
     line-height: 30px;
-    border-bottom: 1px solid #c1c1c1;
     padding-top:10px;
     padding-bottom: 10px;
+    display:flex;
+    justify-content: space-between;
+    text-decoration: none;
+    border: none;
+    
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
 
 #canvasID {
@@ -24,7 +32,30 @@
 #canvasID h1 {
     margin-top: 0px;
     margin-bottom: 8px;
+    border-bottom: 1px solid #c1c1c1;
 
+}
+.canvasLink {
+    border: none;
+    text-decoration: none;
+
+}
+.addNewText {  
+    height:35px;
+    width: 35px;
+    color: white;
+    background-color: #ec6ba777;
+    position:absolute;
+    right: 35px;
+    top: 8px;
+    font-size: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.addNewText:after {
+    content:"+";
+    top:-11px;
+    position: relative;
 }
 
 #canvasTableID {
@@ -36,7 +67,7 @@
     padding: 20px;
     /* width: 200px; 
     height: 200px; */
-    background-color: rgb(221, 221, 221);
+    background-color: #dddddd;
     position: absolute;
     border-radius: 4px;
     font-size:12px;
@@ -53,6 +84,8 @@
     height: auto;
     width: 120px;
     border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(68, 68, 68, 0.356) ;
+
     
 }
 .canvasOptions p {
@@ -118,4 +151,41 @@
 }
 .textoAlineadoToggle > *:hover {
     background-color: rgba(88, 88, 88, 0.2);
+}
+.hoverdeeditables {
+    background-color: rgba(88, 88, 88, 0.2);
+}
+
+.setColors {
+    /* margin: 0 8px; */
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.setColors > div {
+    width: 25%;
+    height: 25px;
+    border: 1px black solid;
+}
+
+.setType {
+    display:flex;
+}
+.setType > div {
+    width: 50%;
+    
+}
+.setType > div:hover {
+    background-color: rgba(88, 88, 88, 0.2);
+}
+
+.inputslists input {
+    padding-left: 15px;
+    font-size: 20px;
+}
+.inputslists li {
+    margin-left: 15px;
+}
+.addNewlistt > *:hover {
+    background-color: rgba(0, 255, 0, 0.205);
 }

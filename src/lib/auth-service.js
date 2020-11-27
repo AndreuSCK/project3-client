@@ -25,7 +25,12 @@ class Auth {
       .post("/auth/signup", { username, password })
       .then(({ data }) => data);
   }
-
+  saveData({ localID, personalID, x, y, textValue, fuenteDelTexto, textoAlineado, widthState, heightState, backgroundDiv }) {
+    console.log("patatas", { localID, personalID, x, y, textValue, fuenteDelTexto, textoAlineado, widthState, heightState, backgroundDiv })
+    return this.auth
+      .post("/auth/savedata", { localID, personalID, x, y, textValue, fuenteDelTexto, textoAlineado, widthState, heightState, backgroundDiv })
+      .then(({ data }) => data);
+  }
   login({ username, password }) {
     return this.auth
       .post("/auth/login", { username, password })
