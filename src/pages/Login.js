@@ -54,8 +54,12 @@ class Login extends Component {
             value={password}
             onChange={this.handleChange}
           />
+          {
+            this.props.message ?
+              <p>User not found or wrong password</p> : <> </>
+          }
           <input className="submit" type='submit' value='LOG IN' />
-          {this.props.message}
+          {/* {this.props.message} */}
         </form>
       </div>
     );

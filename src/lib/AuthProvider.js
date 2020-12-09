@@ -69,8 +69,7 @@ class AuthProvider extends React.Component {
       .signup({ username, password })
       .then((user) => this.setState({ isLoggedin: true, user }))
       .catch(({ response }) => {
-        this.setState({ message: 'hola' })
-
+        this.setState({ message: 'Username is already taken' })
 
       })
       ;

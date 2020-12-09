@@ -53,7 +53,10 @@ class Signup extends Component {
             value={password}
             onChange={this.handleChange}
           />
-
+          {
+            this.props.message ?
+              this.props.message : <> </>
+          }
           <input className="submit" type='submit' value='SIGNUP' />
         </form>
 
